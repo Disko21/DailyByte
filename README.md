@@ -1,1 +1,1 @@
-# DailyByte
+# Challenge from Daily Byte to do one exercise everyday.
