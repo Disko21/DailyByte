@@ -8,13 +8,11 @@ for (int i = 1; i < letter.Length; i++)
     break;
   }
 }
-if (number == 0)
+if (isCorrect)
 {
   Console.WriteLine("True");
-  return isCorrect;
 }
 else
 {
   Console.WriteLine("False");
-  return isCorrect;
 }

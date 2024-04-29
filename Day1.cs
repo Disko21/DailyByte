@@ -1,4 +1,4 @@
-﻿string[] words = Console.ReadLine().Split(" ");
+﻿/*string[] words = Console.ReadLine().Split(" ");
 string answer = "";
 char[] support;
 char firstElement;
@@ -17,4 +17,4 @@ if (words is not null)
         answer += new string(support) + " ";
     }
 }
-Console.WriteLine(answer);
+Console.WriteLine(answer);*/

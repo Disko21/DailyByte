@@ -1,4 +1,4 @@
-﻿string palindrome = Console.ReadLine().Replace(" ", "").ToLower();
+﻿/*string palindrome = Console.ReadLine().Replace(" ", "").ToLower();
 if (palindrome is not null)
 {
     for (int i = 0; i < palindrome.Length / 2; i++)
@@ -10,4 +10,4 @@ if (palindrome is not null)
     }
     return 0;
 }
-return 0;
+return 0;*/

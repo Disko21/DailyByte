@@ -1,4 +1,4 @@
-string vacuum = Console.ReadLine().ToLower();
+/*string vacuum = Console.ReadLine().ToLower();
 int number = 0;
 for (int i = 0; i < vacuum.Length; i++)
 {
@@ -20,4 +20,4 @@ else
 {
   Console.WriteLine("False");
   return false;
-}
+}*/
