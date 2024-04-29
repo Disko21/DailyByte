@@ -1,4 +1,4 @@
-string letter = Console.ReadLine();
+/*string letter = Console.ReadLine();
 bool isCorrect = true;
 for (int i = 1; i < letter.Length; i++)
 {
@@ -15,4 +15,4 @@ if (isCorrect)
 else
 {
   Console.WriteLine("False");
-}
+}*/
