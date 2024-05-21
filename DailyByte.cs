@@ -1,5 +1,7 @@
-﻿internal class DailyByte
+﻿#nullable disable
+internal class DailyByte
 {
+
 // Function that reverses the entered string
     static void Day1()
     {
@@ -37,7 +39,7 @@
         Console.WriteLine(answer);
     }
 
-// Function that checks whether the entered string is a palindrome
+// Function that checks if the entered string is a palindrome
     static int Day2()
     {
         string palindrome = "";
@@ -118,7 +120,7 @@
         Console.Write("Enter string to checks if it's has properly used capitalization: ");
         try
         {
-            letter = Console.ReadLine();
+            letter = Console.ReadLine() ?? string.Empty;
         }
         catch
         {
@@ -142,6 +144,100 @@
         {
             Console.WriteLine("False");
         }
+    }
+
+    // Function that sums two binary string
+    static string Day5()
+    {
+        string firstByte = "0";
+        string secondByte = "0";
+        string next = "0";
+        string sum = "";
+
+        Console.Write("Enter first binary string: ");
+        try
+        {
+            firstByte = Console.ReadLine() ?? string.Empty;
+        }
+        catch
+        {
+            Console.WriteLine("Error!!!");
+        }
+
+        Console.Write("Enter second binary string: ");
+        try
+        {
+            secondByte = Console.ReadLine() ?? string.Empty;
+        }
+        catch
+        {
+            Console.WriteLine("Error!!!");
+        }
+
+        while (firstByte != "" && secondByte != "")
+        {
+            if (Char.GetNumericValue(firstByte[^1]) + Char.GetNumericValue(secondByte[^1]) + Int32.Parse(next) == 0)
+            {
+                sum += "0";
+                next = "0";
+            }
+            else if (Char.GetNumericValue(firstByte[^1]) + Char.GetNumericValue(secondByte[^1]) + Int32.Parse(next) == 1)
+            {
+                sum += "1";
+                next = "0";
+            }
+            else if (Char.GetNumericValue(firstByte[^1]) + Char.GetNumericValue(secondByte[^1]) + Int32.Parse(next) == 2)
+            {
+                sum += "0";
+                next = "1";
+            }
+            else if (Char.GetNumericValue(firstByte[^1]) + Char.GetNumericValue(secondByte[^1]) + Int32.Parse(next) == 3)
+            {
+                sum += "1";
+                next = "1";
+            }
+
+            if (firstByte != "" && secondByte != "")
+            {
+                firstByte = firstByte.Remove(firstByte.Length - 1);
+                secondByte = secondByte.Remove(secondByte.Length - 1);
+            }
+            else if (firstByte != "")
+            {
+                firstByte = firstByte.Remove(firstByte.Length - 1);
+            }
+            else if (secondByte != "")
+            {
+                secondByte = secondByte.Remove(secondByte.Length - 1);
+            }
+
+            if (firstByte == "")
+            {
+                firstByte = "0";
+            }
+            else if (secondByte == "")
+            {
+                secondByte = "0";
+            }
+        }
+        if (next == "1")
+        {
+            sum += "1";
+        }
+        sum = new string(sum.Reverse().ToArray());
+        
+        Console.WriteLine(sum);
+        return sum;
+    }
+
+// Function searches for the longest prefix in entered string
+    static string Day6()
+    {
+        string firstPrefix = "";
+        string secondPrefix = "";
+        string thirdPrefix = "";
+
+        return firstPrefix + secondPrefix + thirdPrefix;
     }
     static void Main(string[] args)
     {
@@ -170,6 +266,12 @@
                 break;
             case 4:
                 Day4();
+                break;
+            case 5:
+                Day5();
+                break;
+            case 6:
+                Day6();
                 break;
             default:
                 Console.WriteLine("That daily challenge isn't done.");
