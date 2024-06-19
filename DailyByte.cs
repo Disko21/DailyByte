@@ -10,9 +10,9 @@ internal class DailyByte
         char[] support;
         char firstElement;
 
-        Console.Write("Enter string to reverse: ");
         try
         {
+            Console.Write("Enter string to reverse: ");
             words = Console.ReadLine().Split(" ");
         }
         catch
@@ -44,9 +44,9 @@ internal class DailyByte
     {
         string palindrome = "";
 
-        Console.Write("Enter string to try if it a palindrome: ");
         try
         {
+            Console.Write("Enter string to try if it a palindrome: ");
             palindrome = Console.ReadLine().Replace(" ", "").ToLower();
         }
         catch
@@ -77,9 +77,9 @@ internal class DailyByte
         int number = 0;
         string vacuum = "";
 
-        Console.Write("Enter vacuum moves (u,r,d,l): ");
         try
         {
+            Console.Write("Enter vacuum moves (u,r,d,l): ");
             vacuum = Console.ReadLine().ToLower();
         }
         catch
@@ -116,10 +116,10 @@ internal class DailyByte
     {
         string letter = "";
         bool isCorrect = true;
-
-        Console.Write("Enter string to checks if it's has properly used capitalization: ");
+        
         try
         {
+            Console.Write("Enter string to checks if it's has properly used capitalization: ");
             letter = Console.ReadLine() ?? string.Empty;
         }
         catch
@@ -146,7 +146,7 @@ internal class DailyByte
         }
     }
 
-    // Function that sums two binary string
+// Function that sums two binary string
     static string Day5()
     {
         string firstByte = "0";
@@ -154,19 +154,19 @@ internal class DailyByte
         string next = "0";
         string sum = "";
 
-        Console.Write("Enter first binary string: ");
         try
         {
+            Console.Write("Enter first binary string: ");
             firstByte = Console.ReadLine() ?? string.Empty;
         }
         catch
         {
             Console.WriteLine("Error!!!");
         }
-
-        Console.Write("Enter second binary string: ");
+        
         try
         {
+            Console.Write("Enter second binary string: ");
             secondByte = Console.ReadLine() ?? string.Empty;
         }
         catch
@@ -236,12 +236,52 @@ internal class DailyByte
         string firstPrefix = "";
         string secondPrefix = "";
         string thirdPrefix = "";
+        string longestPrefix = "";
 
-        return firstPrefix + secondPrefix + thirdPrefix;
+        try
+        {
+            Console.Write("Enter first prefix: ");
+            firstPrefix = Console.ReadLine() ?? string.Empty;
+        }
+        catch
+        {
+            Console.WriteLine("Error!!!");
+        }
+
+        try
+        {
+            Console.Write("Enter second prefix: ");
+            secondPrefix = Console.ReadLine() ?? string.Empty;
+        }
+        catch
+        {
+            Console.WriteLine("Error!!!");
+        }
+
+        try
+        {
+            Console.Write("Enter third prefix: ");
+            thirdPrefix = Console.ReadLine() ?? string.Empty;
+        }
+        catch
+        {
+            Console.WriteLine("Error!!!");
+        }
+
+
+
+        return longestPrefix;
     }
     static void Main(string[] args)
     {
         int a = -1;
+
+        Console.WriteLine("1. Function that reverses the entered string.");
+        Console.WriteLine("2. Function that checks if the entered string is a palindrome.");
+        Console.WriteLine("3. Function that checks if the vacuum has returned to its starting position.");
+        Console.WriteLine("4. Function that checks if entered string has properly used capitalization.");
+        Console.WriteLine("5. Function that sums two binary string.");
+        Console.WriteLine("6. Function searches for the longest prefix in entered string.");
 
         Console.Write("Which day to compile from DailyByte challenge?: ");
         try
@@ -252,6 +292,7 @@ internal class DailyByte
         {
             Console.WriteLine("Error!!! You entered an incorrect value.");
         }
+        Console.Clear();
 
         switch (a) 
         {
